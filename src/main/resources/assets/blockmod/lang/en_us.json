@@ -1,0 +1,13 @@
+{
+  "item.blockmod.topaz": "Topaz",
+  "item.blockmod.raw_topaz": "Raw Topaz",
+  "item.blockmod.topaz_sword": "Topaz Sword",
+  "item.blockmod.topaz_pickaxe": "Topaz Pickaxe",
+  "item.blockmod.topaz_axe": "Topaz Axe",
+  "item.blockmod.topaz_shovel": "Topaz Shovel",
+  "item.blockmod.topaz_hoe": "Topaz Hoe",
+  "block.blockmod.topaz_block": "Block of Topaz",
+  "block.blockmod.topaz_ore": "Topaz Ore",
+  "block.blockmod.deepslate_topaz_ore": "Deepslate Topaz Ore",
+  "creativetab.block_tab": "Topaz Mod Tab"
+}

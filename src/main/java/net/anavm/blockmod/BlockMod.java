@@ -1,6 +1,10 @@
 package net.anavm.blockmod;
 
 import com.mojang.logging.LogUtils;
+import net.anavm.blockmod.block.ModBlocks;
+import net.anavm.blockmod.item.ModCreativeModTabs;
+import net.anavm.blockmod.item.NewItem;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -25,7 +29,11 @@ public class BlockMod
     public BlockMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        ModCreativeModTabs.register(modEventBus);
 
+        NewItem.register(modEventBus);
+
+        ModBlocks.register(modEventBus);
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -46,7 +54,10 @@ public class BlockMod
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-
+        if(event.getTabKey().equals(CreativeModeTabs.INGREDIENTS)){
+            event.accept(NewItem.TOPAZ);
+            event.accept(NewItem.RAW_TOPAZ);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
