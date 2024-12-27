@@ -9,6 +9,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -19,7 +20,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         super(output, lookupProvider, BlockMod.MODID, existingFileHelper);
     }
     @Override
-    protected void addTags(HolderLookup.Provider provider){
+    protected void addTags(HolderLookup.@NotNull Provider provider){
         this.tag(ModTags.Blocks.METAL_DETECTOR_VALUABLES).add(ModBlocks.TOPAZ_ORE.get()).addTag(
                 Tags.Blocks.ORES);
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)

@@ -13,9 +13,11 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Objects;
 
 public class MetalDetectorItem extends Item {
     public MetalDetectorItem(Properties properties){
@@ -23,30 +25,32 @@ public class MetalDetectorItem extends Item {
     }
 
     @Override
-    public InteractionResult useOn(UseOnContext context){
+    public @NotNull InteractionResult useOn(UseOnContext context){
         if(!context.getLevel().isClientSide()){
             BlockPos pClicked = context.getClickedPos();
             Player player = context.getPlayer();
             for(int i = 0; i < pClicked.getY(); i++){
                 BlockState s = context.getLevel().getBlockState(pClicked.below(i));
                 if(!isValuableBlock(s)){
+                    assert player != null;
                     player.sendSystemMessage(Component.literal("No valuables found"));
 
                 }
                 else{
+                    assert player != null;
                     outputValuableCoordinates(pClicked.below(i), player, s.getBlock());
                     break;
                 }
             }
         }
-        context.getItemInHand().hurtAndBreak(1, context.getPlayer(), player -> player.broadcastBreakEvent(
+        context.getItemInHand().hurtAndBreak(1, Objects.requireNonNull(context.getPlayer()), player -> player.broadcastBreakEvent(
                 player.getUsedItemHand()
         ));
         return InteractionResult.SUCCESS;
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced){
+    public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced){
         pTooltipComponents.add(Component.translatable("tooltip.blockmod.metal_detector.tooltip"));
         super.appendHoverText(stack, level, pTooltipComponents, pIsAdvanced);
     }
