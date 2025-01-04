@@ -1,0 +1,10 @@
+// 1.20.4	2024-12-27T15:07:47.9498041	Block States: blockmod
+8f68957be1546466dab98d9e3b4eca742f6ff7e4 assets/blockmod/blockstates/deepslate_topaz_ore.json
+dd797d89c2b3494322f6074260ad1e338d7a22fc assets/blockmod/blockstates/topaz_block.json
+e37681fdecae0a915239ce959d16da181ca98e79 assets/blockmod/blockstates/topaz_ore.json
+57187d960407bc2eb82499ebeec139722d5a1d66 assets/blockmod/models/block/deepslate_topaz_ore.json
+dfcd47b081cf1a4a6f981dae46c54728225bac00 assets/blockmod/models/block/topaz_block.json
+30f09f0e858703e56ea7ebdddf0fb7b8de6d75bc assets/blockmod/models/block/topaz_ore.json
+d290d5820210cc59713eadbe78864276c27cf77e assets/blockmod/models/item/deepslate_topaz_ore.json
+f063283e8cf968efadfdb89fc4fb41fd5f628a6d assets/blockmod/models/item/topaz_block.json
+bb3ae7b40c71a79d03088155e388d3bb9f3b5e7d assets/blockmod/models/item/topaz_ore.json
