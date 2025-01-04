@@ -3,7 +3,6 @@ package net.anavm.blockmod.block;
 import net.anavm.blockmod.BlockMod;
 import net.anavm.blockmod.item.NewItem;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.StoneButtonBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
